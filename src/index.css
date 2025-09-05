@@ -2,39 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* El Mustafa Import & Export Design System - Natural & Fresh Theme */
 
 @layer base {
   :root {
+    /* Base colors */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 143 31% 15%;
 
+    /* Card system */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 143 31% 15%;
 
+    /* Popover system */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 143 31% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary brand colors - Rich Green */
+    --primary: 143 68% 25%;
+    --primary-foreground: 0 0% 98%;
+    --primary-hover: 143 68% 20%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary colors - Warm Earth */
+    --secondary: 39 45% 92%;
+    --secondary-foreground: 143 31% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted tones */
+    --muted: 39 20% 96%;
+    --muted-foreground: 143 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent colors - Fresh Orange */
+    --accent: 25 95% 60%;
+    --accent-foreground: 0 0% 98%;
+    --accent-hover: 25 95% 55%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* System colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Borders and inputs */
+    --border: 143 25% 88%;
+    --input: 143 25% 88%;
+    --ring: 143 68% 25%;
+
+    /* Custom agricultural theme colors */
+    --fresh-green: 143 68% 25%;
+    --harvest-orange: 25 95% 60%;
+    --earth-brown: 30 25% 20%;
+    --golden-yellow: 45 95% 65%;
+    --natural-beige: 39 45% 92%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(143 68% 25%), hsl(25 95% 60%));
+    --gradient-fresh: linear-gradient(180deg, hsl(143 68% 25% / 0.1), hsl(25 95% 60% / 0.1));
+    --gradient-earth: linear-gradient(135deg, hsl(30 25% 20%), hsl(143 68% 25%));
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px hsl(143 68% 25% / 0.1);
+    --shadow-card: 0 8px 30px hsl(143 68% 25% / 0.12);
+    --shadow-hero: 0 20px 60px hsl(143 68% 25% / 0.2);
 
     --radius: 0.5rem;
 
