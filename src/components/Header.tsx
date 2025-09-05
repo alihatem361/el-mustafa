@@ -50,11 +50,16 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center">
             <div
-              className={`text-xl font-bold text-primary hover:scale-110 transition-transform duration-300 cursor-pointer ${
+              className={`flex items-center gap-3 hover:scale-110 transition-transform duration-300 cursor-pointer ${
                 !isScrolled ? "drop-shadow-lg" : ""
               }`}
+              onClick={() => scrollToSection("hero")}
             >
-              المصطفى
+              <img
+                src="/logo.png"
+                alt="El Mostafa Logo"
+                className="h-10 w-auto object-contain"
+              />
             </div>
           </div>
 
