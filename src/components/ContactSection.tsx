@@ -1,40 +1,42 @@
-import { useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
-import { useLanguage } from './LanguageProvider';
-import { useToast } from '@/hooks/use-toast';
-import { Mail, Phone, User } from 'lucide-react';
+import { useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { useLanguage } from "./LanguageProvider";
+import { useToast } from "@/hooks/use-toast";
+import { Mail, Phone, User } from "lucide-react";
 
 const ContactSection = () => {
   const { t } = useLanguage();
   const { toast } = useToast();
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Here you would typically send the form data to your backend
     toast({
       title: "رسالتك تم إرسالها بنجاح",
       description: "سنتواصل معك قريباً",
     });
-    
+
     // Reset form
-    setFormData({ name: '', email: '', phone: '', message: '' });
+    setFormData({ name: "", email: "", phone: "", message: "" });
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -43,46 +45,59 @@ const ContactSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            {t('contactTitle')}
+            {t("contactTitle")}
           </h2>
-          <div className="w-24 h-1 bg-accent mx-auto rounded-full animate-scale-in" style={{ animationDelay: '0.3s' }}></div>
+          <div
+            className="w-24 h-1 bg-accent mx-auto rounded-full animate-scale-in"
+            style={{ animationDelay: "0.3s" }}
+          ></div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Information */}
-          <div className="space-y-8 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+          <div
+            className="space-y-8 animate-fade-in-up"
+            style={{ animationDelay: "0.4s" }}
+          >
             <Card className="shadow-card border-0 hover:shadow-lg transition-all duration-300 hover:scale-105">
               <CardHeader>
                 <CardTitle className="flex items-center gap-3 text-primary">
                   <User className="h-5 w-5 animate-pulse-slow" />
-                  {t('generalManager')}
+                  {t("generalManager")}
                 </CardTitle>
               </CardHeader>
             </Card>
 
             <div className="space-y-6">
               {/* Phone Numbers */}
-              <Card className="p-6 shadow-soft border-l-4 border-l-primary hover:shadow-lg transition-all duration-300 hover:scale-105 animate-slide-up" style={{ animationDelay: '0.6s' }}>
+              <Card
+                className="p-6 shadow-soft border-l-4 border-l-primary hover:shadow-lg transition-all duration-300 hover:scale-105 animate-slide-up"
+                style={{ animationDelay: "0.6s" }}
+              >
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-primary/20 hover:scale-110">
                     <Phone className="h-6 w-6 text-primary" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-2">
-                      {t('language') === 'ar' ? 'أرقام الهاتف' : 'Phone Numbers'}
+                      {t("language") === "ar"
+                        ? "أرقام الهاتف"
+                        : "Phone Numbers"}
                     </h3>
                     <div className="space-y-1">
-                      <a 
-                        href="tel:+201006570319" 
-                        className="block text-muted-foreground hover:text-primary transition-colors"
+                      <a
+                        href="tel:+201006570319"
+                        className="block text-muted-foreground hover:text-primary transition-colors font-mono text-lg"
+                        dir="ltr"
                       >
-                        +20 100 657 0319
+                        +201006570319
                       </a>
-                      <a 
-                        href="tel:+201111990118" 
-                        className="block text-muted-foreground hover:text-primary transition-colors"
+                      <a
+                        href="tel:+201111990118"
+                        className="block text-muted-foreground hover:text-primary transition-colors font-mono text-lg"
+                        dir="ltr"
                       >
-                        +20 111 199 0118
+                        +201111990118
                       </a>
                     </div>
                   </div>
@@ -90,24 +105,27 @@ const ContactSection = () => {
               </Card>
 
               {/* Email */}
-              <Card className="p-6 shadow-soft border-l-4 border-l-accent hover:shadow-lg transition-all duration-300 hover:scale-105 animate-slide-up" style={{ animationDelay: '0.8s' }}>
+              <Card
+                className="p-6 shadow-soft border-l-4 border-l-accent hover:shadow-lg transition-all duration-300 hover:scale-105 animate-slide-up"
+                style={{ animationDelay: "0.8s" }}
+              >
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-accent/20 hover:scale-110">
                     <Mail className="h-6 w-6 text-accent" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-2">
-                      {t('email')}
+                      {t("email")}
                     </h3>
                     <div className="space-y-1">
-                      <a 
-                        href="mailto:nader@elmostafa.co" 
+                      <a
+                        href="mailto:nader@elmostafa.co"
                         className="block text-muted-foreground hover:text-primary transition-colors"
                       >
                         nader@elmostafa.co
                       </a>
-                      <a 
-                        href="mailto:info@elmostafa.co" 
+                      <a
+                        href="mailto:info@elmostafa.co"
                         className="block text-muted-foreground hover:text-primary transition-colors"
                       >
                         info@elmostafa.co
@@ -120,16 +138,19 @@ const ContactSection = () => {
           </div>
 
           {/* Contact Form */}
-          <Card className="shadow-card border-0 hover:shadow-lg transition-all duration-300 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+          <Card
+            className="shadow-card border-0 hover:shadow-lg transition-all duration-300 animate-fade-in-up"
+            style={{ animationDelay: "0.5s" }}
+          >
             <CardHeader>
               <CardTitle className="text-xl text-foreground">
-                {t('language') === 'ar' ? 'إرسال رسالة' : 'Send Message'}
+                {t("language") === "ar" ? "إرسال رسالة" : "Send Message"}
               </CardTitle>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-2">
-                  <Label htmlFor="name">{t('name')}</Label>
+                  <Label htmlFor="name">{t("name")}</Label>
                   <Input
                     id="name"
                     name="name"
@@ -141,7 +162,7 @@ const ContactSection = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="email">{t('email')}</Label>
+                  <Label htmlFor="email">{t("email")}</Label>
                   <Input
                     id="email"
                     name="email"
@@ -154,7 +175,7 @@ const ContactSection = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="phone">{t('phone')}</Label>
+                  <Label htmlFor="phone">{t("phone")}</Label>
                   <Input
                     id="phone"
                     name="phone"
@@ -166,7 +187,7 @@ const ContactSection = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="message">{t('message')}</Label>
+                  <Label htmlFor="message">{t("message")}</Label>
                   <Textarea
                     id="message"
                     name="message"
@@ -178,11 +199,11 @@ const ContactSection = () => {
                   />
                 </div>
 
-                <Button 
-                  type="submit" 
+                <Button
+                  type="submit"
                   className="w-full bg-primary hover:bg-primary-hover text-primary-foreground py-3 font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg"
                 >
-                  {t('send')}
+                  {t("send")}
                 </Button>
               </form>
             </CardContent>
