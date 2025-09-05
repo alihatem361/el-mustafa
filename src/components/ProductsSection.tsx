@@ -44,25 +44,26 @@ const ProductsSection = () => {
   return (
     <section id="products" className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             {t('productsTitle')}
           </h2>
-          <div className="w-24 h-1 bg-accent mx-auto rounded-full"></div>
+          <div className="w-24 h-1 bg-accent mx-auto rounded-full animate-scale-in" style={{ animationDelay: '0.3s' }}></div>
         </div>
 
         {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {filters.map((filter) => (
+        <div className="flex flex-wrap justify-center gap-4 mb-12 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+          {filters.map((filter, index) => (
             <Button
               key={filter.key}
               variant={activeFilter === filter.key ? "default" : "outline"}
               onClick={() => setActiveFilter(filter.key as any)}
-              className={`px-6 py-2 transition-all duration-300 ${
+              className={`px-6 py-2 transition-all duration-300 hover:scale-105 animate-fade-in ${
                 activeFilter === filter.key 
                   ? 'bg-primary text-primary-foreground shadow-soft' 
                   : 'hover:bg-primary/10'
               }`}
+              style={{ animationDelay: `${0.5 + index * 0.1}s` }}
             >
               {filter.label}
             </Button>
@@ -71,13 +72,17 @@ const ProductsSection = () => {
 
         {/* Products Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {filteredProducts.map((product) => (
-            <Card key={product.id} className="overflow-hidden shadow-card hover:shadow-lg transition-all duration-300 hover:scale-105 border-0">
+          {filteredProducts.map((product, index) => (
+            <Card 
+              key={product.id} 
+              className="overflow-hidden shadow-card hover:shadow-xl transition-all duration-500 hover:scale-105 border-0 animate-fade-in-up group"
+              style={{ animationDelay: `${0.1 * index}s` }}
+            >
               <div className="aspect-[4/3] overflow-hidden">
                 <img
                   src={generateProductImage(product)}
                   alt={language === 'ar' ? product.nameAr : product.nameEn}
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
               </div>
               <CardContent className="p-4">

@@ -29,18 +29,18 @@ const HeroSection = () => {
       
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">
+        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg animate-fade-in-up">
           {t('heroTitle')}
         </h1>
-        <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed drop-shadow-md">
+        <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed drop-shadow-md animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
           {t('heroSubtitle')}
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
           <Button
             size="lg"
             onClick={() => scrollToSection('products')}
-            className="bg-accent hover:bg-accent-hover text-accent-foreground px-8 py-3 text-lg font-semibold shadow-hero transition-all duration-300 hover:scale-105"
+            className="bg-accent hover:bg-accent-hover text-accent-foreground px-8 py-3 text-lg font-semibold shadow-hero transition-all duration-300 hover:scale-105 hover:shadow-xl transform"
           >
             {t('products')}
           </Button>
@@ -48,7 +48,7 @@ const HeroSection = () => {
             variant="outline"
             size="lg"
             onClick={() => scrollToSection('contact')}
-            className="border-white/30 text-white hover:bg-white/10 px-8 py-3 text-lg font-semibold backdrop-blur-sm transition-all duration-300"
+            className="border-white/30 text-white hover:bg-white/10 px-8 py-3 text-lg font-semibold backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-white/60"
           >
             {t('contact')}
           </Button>
@@ -56,12 +56,12 @@ const HeroSection = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-gentle">
         <Button
           variant="ghost"
           size="sm"
           onClick={() => scrollToSection('about')}
-          className="text-white hover:text-white/80 p-2"
+          className="text-white hover:text-white/80 p-2 transition-all duration-300 hover:scale-110"
         >
           <ArrowDown className="h-6 w-6" />
         </Button>

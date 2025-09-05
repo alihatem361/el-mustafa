@@ -41,20 +41,20 @@ const ContactSection = () => {
   return (
     <section id="contact" className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             {t('contactTitle')}
           </h2>
-          <div className="w-24 h-1 bg-accent mx-auto rounded-full"></div>
+          <div className="w-24 h-1 bg-accent mx-auto rounded-full animate-scale-in" style={{ animationDelay: '0.3s' }}></div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Information */}
-          <div className="space-y-8">
-            <Card className="shadow-card border-0">
+          <div className="space-y-8 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+            <Card className="shadow-card border-0 hover:shadow-lg transition-all duration-300 hover:scale-105">
               <CardHeader>
                 <CardTitle className="flex items-center gap-3 text-primary">
-                  <User className="h-5 w-5" />
+                  <User className="h-5 w-5 animate-pulse-slow" />
                   {t('generalManager')}
                 </CardTitle>
               </CardHeader>
@@ -62,9 +62,9 @@ const ContactSection = () => {
 
             <div className="space-y-6">
               {/* Phone Numbers */}
-              <Card className="p-6 shadow-soft border-l-4 border-l-primary">
+              <Card className="p-6 shadow-soft border-l-4 border-l-primary hover:shadow-lg transition-all duration-300 hover:scale-105 animate-slide-up" style={{ animationDelay: '0.6s' }}>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-primary/20 hover:scale-110">
                     <Phone className="h-6 w-6 text-primary" />
                   </div>
                   <div>
@@ -90,9 +90,9 @@ const ContactSection = () => {
               </Card>
 
               {/* Email */}
-              <Card className="p-6 shadow-soft border-l-4 border-l-accent">
+              <Card className="p-6 shadow-soft border-l-4 border-l-accent hover:shadow-lg transition-all duration-300 hover:scale-105 animate-slide-up" style={{ animationDelay: '0.8s' }}>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-accent/20 hover:scale-110">
                     <Mail className="h-6 w-6 text-accent" />
                   </div>
                   <div>
@@ -120,7 +120,7 @@ const ContactSection = () => {
           </div>
 
           {/* Contact Form */}
-          <Card className="shadow-card border-0">
+          <Card className="shadow-card border-0 hover:shadow-lg transition-all duration-300 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
             <CardHeader>
               <CardTitle className="text-xl text-foreground">
                 {t('language') === 'ar' ? 'إرسال رسالة' : 'Send Message'}
@@ -180,7 +180,7 @@ const ContactSection = () => {
 
                 <Button 
                   type="submit" 
-                  className="w-full bg-primary hover:bg-primary-hover text-primary-foreground py-3 font-semibold transition-all duration-300"
+                  className="w-full bg-primary hover:bg-primary-hover text-primary-foreground py-3 font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg"
                 >
                   {t('send')}
                 </Button>
