@@ -32,7 +32,7 @@ const ContactSection = () => {
   };
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormData({
       ...formData,
@@ -94,9 +94,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-2">
-                      {language === "ar"
-                        ? "هاتف / واتساب"
-                        : "Phone / WhatsApp"}
+                      {language === "ar" ? "هاتف / واتساب" : "Phone / WhatsApp"}
                     </h3>
                     <div className="space-y-1">
                       <a

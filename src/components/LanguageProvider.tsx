@@ -20,7 +20,8 @@ const translations = {
 
     // Hero Section
     heroTitle: "شركة المصطفى للإستيراد والتصدير",
-    heroSubtitle: "شريكك الموثوق في الاستيراد والتصدير والتخليص الجمركي والشحن بين مصر والصين",
+    heroSubtitle:
+      "شريكك الموثوق في الاستيراد والتصدير والتخليص الجمركي والشحن بين مصر والصين",
     yearsOfExcellence: "خبرة في السوق",
 
     // About Section
@@ -31,11 +32,14 @@ const translations = {
     // Services Section
     servicesTitle: "خدماتنا",
     serviceImportTitle: "الاستيراد لحساب الغير",
-    serviceImportDesc: "التعامل الكامل مع الموردين في الصين وشحن البضائع حتى باب مخزنك.",
+    serviceImportDesc:
+      "التعامل الكامل مع الموردين في الصين وشحن البضائع حتى باب مخزنك.",
     serviceShippingTitle: "الشحن والتخليص الجمركي",
-    serviceShippingDesc: "خدمة مخصصة لمن لديهم بضائع جاهزة ويريدون فقط الشحن والتخليص.",
+    serviceShippingDesc:
+      "خدمة مخصصة لمن لديهم بضائع جاهزة ويريدون فقط الشحن والتخليص.",
     serviceLogisticsTitle: "الدعم اللوجستي والسياحي في الصين",
-    serviceLogisticsDesc: "استقبال العملاء في جوانزو أو أيوو وتوفير مرافقة لزيارة أماكن العمل والمصانع.",
+    serviceLogisticsDesc:
+      "استقبال العملاء في جوانزو أو أيوو وتوفير مرافقة لزيارة أماكن العمل والمصانع.",
     serviceVisaTitle: "استخراج التأشيرات",
     serviceVisaDesc: "المساعدة في استخراج تأشيرة السفر للصين.",
     serviceAirFreightTitle: "الشحن الجوي",
@@ -44,28 +48,36 @@ const translations = {
     // Workflow Section
     workflowTitle: "كيف نعمل",
     step1Title: "الطلب والتسعير",
-    step1Desc: "العميل يرسل نوع السلعة، المواصفات، والصور. الرد خلال أسبوع بتقرير مفصل يشمل الأسعار، الجمارك، الشحن، والتكلفة التقريبية.",
+    step1Desc:
+      "العميل يرسل نوع السلعة، المواصفات، والصور. الرد خلال أسبوع بتقرير مفصل يشمل الأسعار، الجمارك، الشحن، والتكلفة التقريبية.",
     step2Title: "التعاقد والدفع",
-    step2Desc: "زيارة العميل للشركة لمناقشة التفاصيل وتوقيع العقد. سداد ثمن البضاعة (كاش أو إيداع بنكي) مقدماً.",
+    step2Desc:
+      "زيارة العميل للشركة لمناقشة التفاصيل وتوقيع العقد. سداد ثمن البضاعة (كاش أو إيداع بنكي) مقدماً.",
     step3Title: "التنفيذ والشحن",
-    step3Desc: "بدء الطلب، الشحن، والتخليص الجمركي. سداد الدفعة الثانية (جمارك، شحن، عمولة) قبل خروج البضاعة من الجمرك بيوم. وصول البضاعة للمخزن في اليوم التالي.",
+    step3Desc:
+      "بدء الطلب، الشحن، والتخليص الجمركي. سداد الدفعة الثانية (جمارك، شحن، عمولة) قبل خروج البضاعة من الجمرك بيوم. وصول البضاعة للمخزن في اليوم التالي.",
     step4Title: "التوثيق وإغلاق الملف",
-    step4Desc: "زيارة المكتب بعد أسبوع من الاستلام. استلام نسخة من كافة المستندات، الفواتير المختومة، وكشف حساب مفصل وموثق.",
+    step4Desc:
+      "زيارة المكتب بعد أسبوع من الاستلام. استلام نسخة من كافة المستندات، الفواتير المختومة، وكشف حساب مفصل وموثق.",
 
     // Why Us Section
     whyUsTitle: "لماذا نحن؟",
     whyUsTransparencyTitle: "الشفافية المالية",
-    whyUsTransparencyDesc: "تقديم فواتير مختومة وموثقة بختم النسر لكل قرش تم دفعه.",
+    whyUsTransparencyDesc:
+      "تقديم فواتير مختومة وموثقة بختم النسر لكل قرش تم دفعه.",
     whyUsFlexibilityTitle: "المرونة",
-    whyUsFlexibilityDesc: "خيارات متعددة سواء كنت ستسافر للصين بنفسك أو ستعتمد علينا كلياً.",
+    whyUsFlexibilityDesc:
+      "خيارات متعددة سواء كنت ستسافر للصين بنفسك أو ستعتمد علينا كلياً.",
     whyUsPrecisionTitle: "الدقة في التقدير",
     whyUsPrecisionDesc: "تقديم دراسة جدوى تقريبية للتكاليف قبل البدء.",
     whyUsCoverageTitle: "التغطية الجغرافية",
-    whyUsCoverageDesc: "مكاتب وخدمات تغطي أهم مدن الصين التجارية (جوانزو، أيوو).",
+    whyUsCoverageDesc:
+      "مكاتب وخدمات تغطي أهم مدن الصين التجارية (جوانزو، أيوو).",
 
     // Contact Section
     contactTitle: "تواصل معنا",
-    contactSubtitle: "لديك استفسار أو ترغب في بدء استيراد شحنتك؟ تواصل معنا عبر الهاتف أو الواتساب، أو زرنا في مقر الشركة.",
+    contactSubtitle:
+      "لديك استفسار أو ترغب في بدء استيراد شحنتك؟ تواصل معنا عبر الهاتف أو الواتساب، أو زرنا في مقر الشركة.",
     name: "الاسم",
     email: "البريد الإلكتروني",
     phone: "رقم الهاتف",
@@ -100,41 +112,54 @@ const translations = {
     // Services Section
     servicesTitle: "Our Services",
     serviceImportTitle: "Import on Behalf",
-    serviceImportDesc: "Complete handling with suppliers in China and shipping goods right to your warehouse door.",
+    serviceImportDesc:
+      "Complete handling with suppliers in China and shipping goods right to your warehouse door.",
     serviceShippingTitle: "Shipping & Customs Clearance",
-    serviceShippingDesc: "Dedicated service for those who have goods ready and only need shipping and customs clearance.",
+    serviceShippingDesc:
+      "Dedicated service for those who have goods ready and only need shipping and customs clearance.",
     serviceLogisticsTitle: "Logistics & Tourism Support in China",
-    serviceLogisticsDesc: "Welcoming clients in Guangzhou or Yiwu with guided tours to workplaces and factories.",
+    serviceLogisticsDesc:
+      "Welcoming clients in Guangzhou or Yiwu with guided tours to workplaces and factories.",
     serviceVisaTitle: "Visa Processing",
     serviceVisaDesc: "Assistance in obtaining travel visas to China.",
     serviceAirFreightTitle: "Air Freight",
-    serviceAirFreightDesc: "Fast shipping for all products permitted to enter Egypt.",
+    serviceAirFreightDesc:
+      "Fast shipping for all products permitted to enter Egypt.",
 
     // Workflow Section
     workflowTitle: "How We Work",
     step1Title: "Request & Pricing",
-    step1Desc: "The client sends the product type, specifications, and photos. Response within a week with a detailed report including prices, customs, shipping, and approximate cost.",
+    step1Desc:
+      "The client sends the product type, specifications, and photos. Response within a week with a detailed report including prices, customs, shipping, and approximate cost.",
     step2Title: "Contract & Payment",
-    step2Desc: "Client visits the company to discuss details and sign the contract. Payment for goods (cash or bank deposit) in advance.",
+    step2Desc:
+      "Client visits the company to discuss details and sign the contract. Payment for goods (cash or bank deposit) in advance.",
     step3Title: "Execution & Shipping",
-    step3Desc: "Order processing, shipping, and customs clearance begins. Second payment (customs, shipping, commission) due one day before goods leave customs. Goods delivered to warehouse the next day.",
+    step3Desc:
+      "Order processing, shipping, and customs clearance begins. Second payment (customs, shipping, commission) due one day before goods leave customs. Goods delivered to warehouse the next day.",
     step4Title: "Documentation & File Closure",
-    step4Desc: "Visit the office one week after receiving goods. Receive copies of all documents, stamped invoices, and a detailed certified account statement.",
+    step4Desc:
+      "Visit the office one week after receiving goods. Receive copies of all documents, stamped invoices, and a detailed certified account statement.",
 
     // Why Us Section
     whyUsTitle: "Why Choose Us?",
     whyUsTransparencyTitle: "Financial Transparency",
-    whyUsTransparencyDesc: "Providing stamped and certified invoices with the eagle seal for every penny spent.",
+    whyUsTransparencyDesc:
+      "Providing stamped and certified invoices with the eagle seal for every penny spent.",
     whyUsFlexibilityTitle: "Flexibility",
-    whyUsFlexibilityDesc: "Multiple options whether you travel to China yourself or rely on us completely.",
+    whyUsFlexibilityDesc:
+      "Multiple options whether you travel to China yourself or rely on us completely.",
     whyUsPrecisionTitle: "Accurate Estimation",
-    whyUsPrecisionDesc: "Providing an approximate feasibility study of costs before starting.",
+    whyUsPrecisionDesc:
+      "Providing an approximate feasibility study of costs before starting.",
     whyUsCoverageTitle: "Geographic Coverage",
-    whyUsCoverageDesc: "Offices and services covering China's most important commercial cities (Guangzhou, Yiwu).",
+    whyUsCoverageDesc:
+      "Offices and services covering China's most important commercial cities (Guangzhou, Yiwu).",
 
     // Contact Section
     contactTitle: "Contact Us",
-    contactSubtitle: "Have a question or want to start importing your shipment? Contact us by phone or WhatsApp, or visit our office.",
+    contactSubtitle:
+      "Have a question or want to start importing your shipment? Contact us by phone or WhatsApp, or visit our office.",
     name: "Name",
     email: "Email",
     phone: "Phone Number",
@@ -149,7 +174,7 @@ const translations = {
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(
-  undefined
+  undefined,
 );
 
 export function LanguageProvider({ children }: { children: ReactNode }) {

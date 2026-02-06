@@ -1,11 +1,6 @@
 import { useLanguage } from "./LanguageProvider";
 import { Card } from "@/components/ui/card";
-import {
-  ClipboardList,
-  Handshake,
-  Truck,
-  FileText,
-} from "lucide-react";
+import { ClipboardList, Handshake, Truck, FileText } from "lucide-react";
 
 const WorkflowSection = () => {
   const { t, language } = useLanguage();
@@ -96,9 +91,7 @@ const WorkflowSection = () => {
                         <div
                           className={`w-12 h-12 ${step.bgColor} rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:scale-110`}
                         >
-                          <IconComponent
-                            className={`h-6 w-6 ${step.color}`}
-                          />
+                          <IconComponent className={`h-6 w-6 ${step.color}`} />
                         </div>
                         <div className="flex-1">
                           <h3 className="text-xl font-semibold text-foreground mb-2">
