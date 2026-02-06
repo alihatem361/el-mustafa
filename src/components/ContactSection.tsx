@@ -6,10 +6,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useLanguage } from "./LanguageProvider";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone, User } from "lucide-react";
+import { Mail, Phone, MessageCircle } from "lucide-react";
 
 const ContactSection = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
@@ -32,7 +32,7 @@ const ContactSection = () => {
   };
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormData({
       ...formData,
@@ -47,6 +47,9 @@ const ContactSection = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             {t("contactTitle")}
           </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-4">
+            {t("contactSubtitle")}
+          </p>
           <div
             className="w-24 h-1 bg-accent mx-auto rounded-full animate-scale-in"
             style={{ animationDelay: "0.3s" }}
@@ -62,10 +65,21 @@ const ContactSection = () => {
             <Card className="shadow-card border-0 hover:shadow-lg transition-all duration-300 hover:scale-105">
               <CardHeader>
                 <CardTitle className="flex items-center gap-3 text-primary">
-                  <User className="h-5 w-5 animate-pulse-slow" />
-                  {t("generalManager")}
+                  <MessageCircle className="h-5 w-5 animate-pulse-slow" />
+                  {language === "ar" ? "واتساب" : "WhatsApp"}
                 </CardTitle>
               </CardHeader>
+              <CardContent>
+                <a
+                  href="https://wa.me/201012970066"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-primary transition-colors font-mono text-lg"
+                  dir="ltr"
+                >
+                  +20 101 297 0066
+                </a>
+              </CardContent>
             </Card>
 
             <div className="space-y-6">
@@ -80,24 +94,15 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-2">
-                      {t("language") === "ar"
-                        ? "أرقام الهاتف"
-                        : "Phone Numbers"}
+                      {language === "ar" ? "هاتف / واتساب" : "Phone / WhatsApp"}
                     </h3>
                     <div className="space-y-1">
                       <a
-                        href="tel:+201006570319"
+                        href="tel:+201012970066"
                         className="block text-muted-foreground hover:text-primary transition-colors font-mono text-lg"
                         dir="ltr"
                       >
-                        +201006570319
-                      </a>
-                      <a
-                        href="tel:+201111990118"
-                        className="block text-muted-foreground hover:text-primary transition-colors font-mono text-lg"
-                        dir="ltr"
-                      >
-                        +201111990118
+                        +20 101 297 0066
                       </a>
                     </div>
                   </div>
@@ -119,16 +124,10 @@ const ContactSection = () => {
                     </h3>
                     <div className="space-y-1">
                       <a
-                        href="mailto:nader@elmostafa.co"
+                        href="mailto:almoustafac@yahoo.com"
                         className="block text-muted-foreground hover:text-primary transition-colors"
                       >
-                        nader@elmostafa.co
-                      </a>
-                      <a
-                        href="mailto:info@elmostafa.co"
-                        className="block text-muted-foreground hover:text-primary transition-colors"
-                      >
-                        info@elmostafa.co
+                        almoustafac@yahoo.com
                       </a>
                     </div>
                   </div>

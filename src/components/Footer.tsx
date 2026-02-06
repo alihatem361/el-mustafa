@@ -2,7 +2,7 @@ import { useLanguage } from "./LanguageProvider";
 import { Mail, Phone } from "lucide-react";
 
 const Footer = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -14,8 +14,9 @@ const Footer = () => {
   const quickLinks = [
     { key: "home", href: "hero" },
     { key: "about", href: "about" },
-    { key: "products", href: "products" },
     { key: "services", href: "services" },
+    { key: "workflow", href: "workflow" },
+    { key: "whyUs", href: "whyus" },
     { key: "contact", href: "contact" },
   ];
 
@@ -33,9 +34,9 @@ const Footer = () => {
               />
             </div>
             <p className="text-white/80 leading-relaxed">
-              {t("language") === "ar"
-                ? "شركة رائدة في تصدير الفاكهة والخضروات المصرية عالية الجودة منذ 15 عاماً"
-                : "Leading company in exporting high-quality Egyptian fruits and vegetables for 15 years"}
+              {language === "ar"
+                ? "شركة متخصصة في الاستيراد والتصدير والتخليص الجمركي والشحن بين مصر والصين"
+                : "Specialized in import, export, customs clearance, and shipping between Egypt and China"}
             </p>
           </div>
 
@@ -67,16 +68,10 @@ const Footer = () => {
                 <Phone className="h-4 w-4 text-accent" />
                 <div className="space-y-1">
                   <a
-                    href="tel:+201006570319"
+                    href="tel:+201012970066"
                     className="block hover:text-accent transition-colors"
                   >
-                    +20 100 657 0319
-                  </a>
-                  <a
-                    href="tel:+201111990118"
-                    className="block hover:text-accent transition-colors"
-                  >
-                    +20 111 199 0118
+                    +20 101 297 0066
                   </a>
                 </div>
               </div>
@@ -85,16 +80,10 @@ const Footer = () => {
                 <Mail className="h-4 w-4 text-accent" />
                 <div className="space-y-1">
                   <a
-                    href="mailto:nader@elmostafa.co"
+                    href="mailto:almoustafac@yahoo.com"
                     className="block hover:text-accent transition-colors"
                   >
-                    nader@elmostafa.co
-                  </a>
-                  <a
-                    href="mailto:info@elmostafa.co"
-                    className="block hover:text-accent transition-colors"
-                  >
-                    info@elmostafa.co
+                    almoustafac@yahoo.com
                   </a>
                 </div>
               </div>
