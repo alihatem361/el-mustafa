@@ -1,9 +1,9 @@
 import { Card } from '@/components/ui/card';
 import { useLanguage } from './LanguageProvider';
-import logisticsImage from '@/assets/logistics-shipping.jpg';
+import { Ship, Globe, Shield, FileCheck } from 'lucide-react';
 
 const AboutSection = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <section id="about" className="py-20 bg-gradient-fresh">
@@ -16,15 +16,34 @@ const AboutSection = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Image */}
+          {/* Key Stats */}
           <div className="order-2 lg:order-1 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            <Card className="overflow-hidden shadow-card border-0 hover:shadow-xl transition-all duration-500 hover:scale-105">
-              <img
-                src={logisticsImage}
-                alt="El Mustafa Logistics"
-                className="w-full h-80 object-cover transition-transform duration-700 hover:scale-110"
-              />
-            </Card>
+            <div className="grid grid-cols-2 gap-6">
+              <Card className="p-6 text-center shadow-soft border-l-4 border-l-primary hover:shadow-lg transition-all duration-300 hover:scale-105">
+                <Ship className="h-10 w-10 mx-auto mb-3 text-primary" />
+                <div className="text-sm text-muted-foreground">
+                  {language === 'ar' ? 'شحن بحري وجوي' : 'Sea & Air Freight'}
+                </div>
+              </Card>
+              <Card className="p-6 text-center shadow-soft border-l-4 border-l-accent hover:shadow-lg transition-all duration-300 hover:scale-105">
+                <FileCheck className="h-10 w-10 mx-auto mb-3 text-accent" />
+                <div className="text-sm text-muted-foreground">
+                  {language === 'ar' ? 'تخليص جمركي' : 'Customs Clearance'}
+                </div>
+              </Card>
+              <Card className="p-6 text-center shadow-soft border-l-4 border-l-accent hover:shadow-lg transition-all duration-300 hover:scale-105">
+                <Globe className="h-10 w-10 mx-auto mb-3 text-accent" />
+                <div className="text-sm text-muted-foreground">
+                  {language === 'ar' ? 'تغطية جغرافية' : 'Geographic Coverage'}
+                </div>
+              </Card>
+              <Card className="p-6 text-center shadow-soft border-l-4 border-l-primary hover:shadow-lg transition-all duration-300 hover:scale-105">
+                <Shield className="h-10 w-10 mx-auto mb-3 text-primary" />
+                <div className="text-sm text-muted-foreground">
+                  {language === 'ar' ? 'شفافية كاملة' : 'Full Transparency'}
+                </div>
+              </Card>
+            </div>
           </div>
 
           {/* Content */}
@@ -33,22 +52,6 @@ const AboutSection = () => {
               <p className="text-lg leading-relaxed text-muted-foreground animate-fade-in" style={{ animationDelay: '0.6s' }}>
                 {t('aboutText')}
               </p>
-              
-              <div className="grid sm:grid-cols-2 gap-6 mt-8">
-                <Card className="p-6 text-center shadow-soft border-l-4 border-l-primary hover:shadow-lg transition-all duration-300 hover:scale-105 animate-slide-up" style={{ animationDelay: '0.8s' }}>
-                  <div className="text-3xl font-bold text-primary mb-2 animate-pulse-slow">15+</div>
-                  <div className="text-sm text-muted-foreground">
-                    {t('language') === 'ar' ? 'سنة خبرة' : 'Years Experience'}
-                  </div>
-                </Card>
-                
-                <Card className="p-6 text-center shadow-soft border-l-4 border-l-accent hover:shadow-lg transition-all duration-300 hover:scale-105 animate-slide-up" style={{ animationDelay: '1s' }}>
-                  <div className="text-3xl font-bold text-accent mb-2 animate-pulse-slow">12+</div>
-                  <div className="text-sm text-muted-foreground">
-                    {t('language') === 'ar' ? 'دولة مصدرة إليها' : 'Export Countries'}
-                  </div>
-                </Card>
-              </div>
             </div>
           </div>
         </div>

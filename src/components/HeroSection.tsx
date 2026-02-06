@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "./LanguageProvider";
-import { ArrowDown, Sparkles, TrendingUp, Globe } from "lucide-react";
+import { ArrowDown, Sparkles, Ship, Globe, Phone } from "lucide-react";
 
 const HeroSection = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -32,99 +32,108 @@ const HeroSection = () => {
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
         {/* Brand Badge */}
         <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-4 py-2 mb-6 border border-white/20 animate-fade-in-up">
-          <Sparkles className="h-4 w-4 text-golden-yellow" />
+          <Ship className="h-4 w-4 text-golden-yellow" />
           <span className="text-white/90 text-sm font-medium">
-            15 {t("yearsOfExcellence")}
+            {language === "ar" ? "مصر - الصين" : "Egypt - China"}
           </span>
-          <TrendingUp className="h-4 w-4 text-fresh-green" />
+          <Globe className="h-4 w-4 text-fresh-green" />
         </div>
 
-        {/* Main Title with Enhanced Typography */}
+        {/* Main Title */}
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight animate-fade-in-up">
           <span className="bg-gradient-to-r from-white via-golden-yellow/90 to-white bg-clip-text text-transparent drop-shadow-2xl">
             {t("heroTitle")}
           </span>
         </h1>
 
-        {/* Enhanced Subtitle */}
-        <p className="text-xl md:text-3xl lg:text-4xl text-white/95 mb-4 leading-relaxed font-medium drop-shadow-lg animate-fade-in-up max-w-4xl mx-auto animation-delay-300">
+        {/* Subtitle */}
+        <p className="text-xl md:text-2xl lg:text-3xl text-white/95 mb-4 leading-relaxed font-medium drop-shadow-lg animate-fade-in-up max-w-4xl mx-auto animation-delay-300">
           {t("heroSubtitle")}
         </p>
 
         {/* Key Features */}
-        <div className="flex flex-wrap justify-center gap-6 mb-10 animate-fade-in-up animation-delay-500">
+        <div className="flex flex-wrap justify-center gap-4 mb-10 animate-fade-in-up animation-delay-500">
           <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20">
-            <Globe className="h-5 w-5 text-accent" />
+            <Ship className="h-5 w-5 text-accent" />
             <span className="text-white text-sm font-medium">
-              {t("language") === "ar" ? "تصدير عالمي" : "Global Export"}
+              {language === "ar" ? "شحن بحري وجوي" : "Sea & Air Freight"}
             </span>
           </div>
           <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20">
             <Sparkles className="h-5 w-5 text-golden-yellow" />
             <span className="text-white text-sm font-medium">
-              {t("language") === "ar" ? "جودة مضمونة" : "Premium Quality"}
+              {language === "ar" ? "تخليص جمركي" : "Customs Clearance"}
+            </span>
+          </div>
+          <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20">
+            <Globe className="h-5 w-5 text-fresh-green" />
+            <span className="text-white text-sm font-medium">
+              {language === "ar" ? "دعم لوجستي" : "Logistics Support"}
             </span>
           </div>
         </div>
 
-        {/* Enhanced CTA Buttons */}
+        {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in-up animation-delay-700">
           <Button
             size="lg"
-            onClick={() => scrollToSection("products")}
+            onClick={() => scrollToSection("services")}
             className="group bg-accent hover:bg-accent-hover text-accent-foreground px-10 py-4 text-xl font-bold shadow-hero transition-all duration-500 hover:scale-110 hover:shadow-2xl transform border-2 border-transparent hover:border-golden-yellow/30 rounded-xl relative overflow-hidden"
           >
             <span className="relative z-10 flex items-center gap-2">
-              {t("products")}
+              {t("services")}
               <ArrowDown className="h-5 w-5 group-hover:translate-y-1 transition-transform duration-300" />
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-harvest-orange to-golden-yellow opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
           </Button>
 
-          <Button
-            variant="outline"
-            size="lg"
-            onClick={() => scrollToSection("contact")}
-            className="group border-2 border-white/40 hover:border-white/80 hover:bg-white/15 px-10 py-4 text-xl font-bold backdrop-blur-md transition-all duration-500 hover:scale-110 hover:shadow-xl rounded-xl relative overflow-hidden"
+          <a
+            href="https://wa.me/201012970066"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <span className="relative z-10 flex items-center gap-2">
-              {t("contact")}
-              <Globe className="h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
-            </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-golden-yellow/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="group border-2 border-white/40 hover:border-white/80 hover:bg-white/15 px-10 py-4 text-xl font-bold backdrop-blur-md transition-all duration-500 hover:scale-110 hover:shadow-xl rounded-xl relative overflow-hidden"
+            >
+              <span className="relative z-10 flex items-center gap-2 text-white">
+                <Phone className="h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
+                {language === "ar" ? "تواصل عبر واتساب" : "WhatsApp Us"}
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-golden-yellow/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            </Button>
+          </a>
         </div>
 
-        {/* Stats or Trust Indicators */}
+        {/* Trust Indicators */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 max-w-3xl mx-auto animate-fade-in-up animation-delay-900">
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
-            <div className="text-3xl font-bold text-golden-yellow mb-2">
-              15+
-            </div>
+            <Ship className="h-8 w-8 mx-auto mb-2 text-golden-yellow" />
             <div className="text-white/90 text-sm">
-              {t("language") === "ar" ? "سنة خبرة" : "Years Experience"}
+              {language === "ar" ? "استيراد وتصدير" : "Import & Export"}
             </div>
           </div>
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
-            <div className="text-3xl font-bold text-accent mb-2">50+</div>
+            <div className="text-3xl font-bold text-accent mb-2">100%</div>
             <div className="text-white/90 text-sm">
-              {t("language") === "ar" ? "دولة تصدير" : "Export Countries"}
+              {language === "ar" ? "شفافية مالية" : "Financial Transparency"}
             </div>
           </div>
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
-            <div className="text-3xl font-bold text-fresh-green mb-2">100%</div>
+            <Globe className="h-8 w-8 mx-auto mb-2 text-fresh-green" />
             <div className="text-white/90 text-sm">
-              {t("language") === "ar" ? "منتجات طبيعية" : "Natural Products"}
+              {language === "ar" ? "جوانزو وأيوو" : "Guangzhou & Yiwu"}
             </div>
           </div>
         </div>
       </div>
 
-      {/* Enhanced Scroll Indicator */}
+      {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-gentle">
         <div className="flex flex-col items-center gap-2">
           <span className="text-white/70 text-xs font-medium">
-            {t("language") === "ar" ? "اكتشف المزيد" : "Discover More"}
+            {language === "ar" ? "اكتشف المزيد" : "Discover More"}
           </span>
           <Button
             variant="ghost"
